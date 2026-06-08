@@ -531,6 +531,139 @@ to{opacity:1;transform:translateY(0);}}
 .prize-choice{border:2px solid var(--yellow-dk);border-radius:var(--radius-sm);padding:8px 12px;background:#fff;font-size:13px;font-weight:700;color:var(--blue-dk);cursor:pointer;transition:all 0.15s;}
 .prize-choice:hover{background:var(--yellow-pale);}
 .prize-choice.chosen{background:var(--yellow);border-color:var(--yellow-dk);}
+
+/* ── RUOTA FORTUNA ── */
+.header{background:var(--white);border-bottom:4px solid var(--blue);padding:0 1rem;display:flex;align-items:center;gap:10px;box-shadow:0 2px 10px rgba(15,51,98,0.10);position:sticky;top:0;z-index:100;min-height:44px;}
+
+
+
+
+
+
+
+
+
+
+to{opacity:1;transform:translateY(0);}}
+
+/* HERO */
+
+
+
+
+
+
+/* FORM */
+
+
+
+
+
+
+
+
+
+/* BUTTONS */
+
+
+
+
+
+
+
+
+
+
+/* RUOTA */
+.wheel-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:1rem;width:100%;}
+.wheel-outer{position:relative;width:min(280px,90vw);height:min(280px,90vw);}
+.wheel-pointer{position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:28px solid var(--blue-dk);z-index:10;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));}
+#wheel-canvas{width:100%;height:100%;border-radius:50%;box-shadow:var(--shadow-lg);}
+.btn-spin{background:var(--yellow);color:var(--blue-dk);border:none;border-radius:40px;padding:14px 36px;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;cursor:pointer;box-shadow:0 4px 16px rgba(245,196,0,0.4);transition:transform 0.15s,box-shadow 0.15s;letter-spacing:0.03em;width:100%;max-width:300px;}
+.btn-spin:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 6px 20px rgba(245,196,0,0.5);}
+.btn-spin:disabled{opacity:0.4;cursor:not-allowed;transform:none;}
+
+/* RISULTATO RUOTA */
+.spin-result{border-radius:var(--radius-sm);padding:0.85rem 1rem;margin-bottom:0.75rem;text-align:center;font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;}
+.spin-result.pts{background:var(--yellow);color:var(--blue-dk);}
+.spin-result.lose{background:var(--red);color:#fff;}
+.spin-result.bankrupt{background:var(--blue-dk);color:var(--yellow);}
+.spin-result.jolly{background:var(--green);color:#fff;}
+
+/* DISPLAY FRASE */
+.phrase-display{background:var(--blue-dk);border-radius:var(--radius);padding:1.25rem;margin-bottom:0.75rem;text-align:center;}
+.phrase-category{font-size:11px;font-weight:800;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;}
+.phrase-hint{font-size:11px;font-weight:700;color:var(--yellow);margin-bottom:12px;}
+.phrase-slots{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 5px;min-height:40px;}
+.slot{display:inline-flex;align-items:flex-end;justify-content:center;width:20px;height:32px;border-bottom:3px solid rgba(255,255,255,0.5);font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:#fff;line-height:1;}
+.slot.space{border-bottom:none;width:14px;}
+.slot.revealed{border-bottom-color:var(--yellow);}
+.slot.special{color:rgba(255,255,255,0.3);}
+
+/* TASTIERA */
+.keyboard{margin-bottom:1rem;width:100%;}
+.kb-
+.kb-row{display:flex;flex-direction:row;flex-wrap:wrap;gap:6px;margin-bottom:6px;}
+.kb-btn{width:40px;height:40px;border:2px solid var(--blue-light);border-radius:var(--radius-sm);font-family:'Montserrat',sans-serif;font-size:13px;font-weight:900;color:var(--blue);background:#fff;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:all 0.12s;flex-shrink:0;}
+.kb-btn:hover:not(:disabled){background:var(--blue-pale);border-color:var(--blue-mid);}
+.kb-btn:disabled{opacity:0.25;cursor:not-allowed;}
+.kb-btn.hit{background:var(--green-light);border-color:var(--green);color:var(--green);}
+.kb-btn.miss{background:var(--red-light);border-color:var(--red);color:var(--red);}
+.kb-btn.vowel{background:var(--yellow-pale);border-color:var(--yellow-dk);color:var(--yellow-dk);}
+
+/* TURNO & PUNTEGGIO */
+.turn-bar{display:flex;align-items:center;justify-content:space-between;background:var(--white);border-radius:var(--radius-sm);padding:0.6rem 0.85rem;margin-bottom:0.75rem;border:1.5px solid var(--blue-light);}
+.turn-player{display:flex;align-items:center;gap:8px;}
+.turn-dot{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;}
+.turn-name{font-size:13px;font-weight:800;color:var(--blue-dk);}
+.turn-
+.turn-pts-wrap{text-align:right;}
+.turn-pts{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:900;color:var(--blue-dk);line-height:1;}
+.turn-pts-
+
+/* SCOREBOARD */
+.scoreboard{background:var(--white);border-radius:var(--radius);padding:0.85rem 1rem;box-shadow:var(--shadow);border:1.5px solid var(--blue-light);margin-bottom:0.75rem;}
+.sb-title{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:900;color:var(--text-light);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.5rem;}
+.sb-row{display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--blue-light);}
+.sb-row:last-child{border-bottom:none;}
+.sb-left{display:flex;align-items:center;gap:7px;}
+.sb-dot{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;}
+.sb-name{font-size:13px;font-weight:700;}
+.sb-val{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;color:var(--blue-dk);}
+.sb-val.leader{color:var(--yellow-dk);}
+
+/* AZIONI IN GIOCO */
+.action-btns{display:flex;flex-direction:column;gap:8px;margin-bottom:0.75rem;}
+.btn-action{width:100%;border:none;border-radius:var(--radius-sm);padding:12px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;cursor:pointer;transition:all 0.15s;letter-spacing:0.02em;}
+.btn-action.consonant{background:var(--blue);color:#fff;}
+.btn-action.consonant:disabled{opacity:0.4;cursor:not-allowed;}
+.btn-action.vowel{background:var(--yellow);color:var(--blue-dk);}
+.btn-action.vowel:disabled{opacity:0.4;cursor:not-allowed;}
+.btn-action.solve{background:var(--green);color:#fff;}
+
+/* RISOLVI MODAL */
+.solve-overlay{position:fixed;inset:0;background:rgba(15,51,98,0.75);z-index:999;display:flex;align-items:center;justify-content:center;padding:1rem;}
+.solve-box{background:#fff;border-radius:18px;padding:1.5rem;max-width:360px;width:100%;}
+.solve-title{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:var(--blue-dk);margin-bottom:8px;}
+.solve-input{width:100%;border:2px solid var(--blue-light);border-radius:var(--radius-sm);padding:10px 12px;font-size:16px;font-family:'Open Sans',sans-serif;font-weight:700;color:var(--text);background:var(--blue-pale);outline:none;margin-bottom:1rem;text-transform:uppercase;}
+.solve-
+
+/* BANNER */
+.banner{display:flex;align-items:center;gap:10px;padding:0.85rem 1rem;border-radius:var(--radius-sm);margin-bottom:0.75rem;}
+.banner.ok{background:var(--green-light);border:2px solid var(--green);}
+.banner.ko{background:var(--red-light);border:2px solid var(--red);}
+.banner.info{background:var(--blue-pale);border:2px solid var(--blue-mid);}
+.banner-icon{font-size:20px;}
+.banner-txt{font-size:13px;font-weight:700;color:var(--text);}
+.banner-txt strong{color:var(--blue-dk);}
+
+/* ROUND BANNER */
+.round-banner{background:var(--blue);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem;text-align:center;color:#fff;}
+.rb-round{font-size:11px;font-weight:800;opacity:0.7;text-transform:uppercase;letter-spacing:0.1em;}
+.rb-phrase{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:900;color:var(--yellow);margin:8px 0;}
+.rb-pts{font-size:13px;font-weight:600;opacity:0.85;}
+
+/* PODIUM */
 </style>
 </head>
 <body>
@@ -609,6 +742,18 @@ to{opacity:1;transform:translateY(0);}}
           <div class="game-sub">Chi vuol essere Milionario?</div>
         </div>
         <div class="game-card-footer" style="background:#C89C00;">
+          <span class="game-cta">Gioca →</span>
+        </div>
+      </div>
+
+
+      <div class="game-card" onclick="openGame('ruota')">
+        <div class="game-card-top">
+          <div class="game-icon" style="background:#FDE8E8;">🎡</div>
+          <div class="game-name">Ruota della Fortuna</div>
+          <div class="game-sub">Indovina la frase lettera per lettera</div>
+        </div>
+        <div class="game-card-footer" style="background:#D85A30;">
           <span class="game-cta">Gioca →</span>
         </div>
       </div>
@@ -999,6 +1144,127 @@ to{opacity:1;transform:translateY(0);}}
       <div id="m-recap"></div>
     </div>
     <button class="btn-yellow" onclick="MIL.restart()">🔄 Nuova partita</button>
+  </div>
+
+
+  </div>
+  <div class="footer"><div class="footer-logo">ABIO NAPOLI ODV</div><div class="footer-sub">Associazione per il Bambino in Ospedale — <a class="footer-link" href="https://www.abionapoli.org" target="_blank">www.abionapoli.org</a></div></div>
+</div>
+<!-- ════ VISTA 7: RUOTA DELLA FORTUNA ════ -->
+<div class="app-view" id="view-ruota">
+  <div class="container">
+
+
+  <!-- SETUP -->
+  <div class="screen active" id="rf-setup">
+    <div class="hero-band">
+      <h2>Ruota della<br><span>Fortuna!</span></h2>
+      <p>Gira la ruota, indovina le lettere e risolvi la frase. Consonanti e vocali, un turno alla volta!</p>
+    </div>
+    <div class="card">
+      <label>Quanti giocatori?</label>
+      <input type="number" id="rf-np" min="2" max="8" value="3"/>
+      <div id="rf-pnames"></div>
+    </div>
+    <div class="card">
+      <label>Frasi per partita</label>
+      <div style="display:flex;gap:8px;">
+        <button class="kb-btn" data-n="3" onclick="RF.setRounds(3)" style="width:auto;padding:8px 16px;font-size:13px;">3</button>
+        <button class="kb-btn" data-n="5" onclick="RF.setRounds(5)" style="width:auto;padding:8px 16px;font-size:13px;">5</button>
+        <button class="kb-btn" data-n="7" onclick="RF.setRounds(7)" style="width:auto;padding:8px 16px;font-size:13px;">7</button>
+      </div>
+      <div id="rf-rounds-preview" style="font-size:12px;color:var(--text-light);font-weight:600;margin-top:8px;">Selezionato: 5 frasi</div>
+    </div>
+    <button class="btn-blue" onclick="RF.start()">Inizia! →</button>
+  </div>
+
+  <!-- GIOCO -->
+  <div class="screen" id="rf-game">
+    <!-- turn bar -->
+    <div class="turn-bar">
+      <div class="turn-player">
+        <div class="turn-dot" id="rf-turn-dot"></div>
+        <div>
+          <div class="turn-label">Turno di</div>
+          <div class="turn-name" id="rf-turn-name"></div>
+        </div>
+      </div>
+      <div class="turn-pts-wrap">
+        <div class="turn-pts" id="rf-turn-pts">0</div>
+        <div class="turn-pts-label">punti round</div>
+      </div>
+    </div>
+
+    <!-- frase display -->
+    <div class="phrase-display">
+      <div class="phrase-category" id="rf-cat"></div>
+      <div class="phrase-hint" id="rf-hint"></div>
+      <div class="phrase-slots" id="rf-slots"></div>
+    </div>
+
+    <!-- risultato ruota -->
+    <div id="rf-spin-result" style="display:none;"></div>
+    <div id="rf-banner" style="display:none;"></div>
+
+    <!-- ruota -->
+    <div class="wheel-wrap" id="rf-wheel-section" style="display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;">
+      <div class="wheel-outer" style="position:relative;width:260px;height:260px;flex-shrink:0;">
+        <div class="wheel-pointer"></div>
+        <canvas id="wheel-canvas" width="260" height="260" style="width:260px;height:260px;border-radius:50%;box-shadow:0 6px 24px rgba(15,51,98,0.18);display:block;"></canvas>
+      </div>
+      <button class="btn-spin" id="rf-spin-btn" onclick="RF.spin()" style="width:100%;max-width:300px;">🎡 Gira la Ruota!</button>
+    </div>
+
+    <!-- azioni dopo ruota -->
+    <div id="rf-actions" style="display:none;">
+      <div class="action-btns">
+        <button class="btn-action consonant" id="rf-btn-consonant" onclick="RF.chooseConsonant()">🔤 Scegli una consonante</button>
+        <button class="btn-action vowel" id="rf-btn-vowel" onclick="RF.chooseVowel()">💰 Compra una vocale (250 pt)</button>
+        <button class="btn-action solve" onclick="RF.openSolve()">💡 Risolvi la frase</button>
+      </div>
+    </div>
+
+    <!-- tastiera consonanti -->
+    <div id="rf-kb-consonants" style="display:none;">
+      <div class="keyboard">
+        <div class="kb-label">Consonanti disponibili</div>
+        <div id="rf-cons-keys" class="kb-row"></div>
+      </div>
+    </div>
+
+    <!-- tastiera vocali -->
+    <div id="rf-kb-vowels" style="display:none;">
+      <div class="keyboard">
+        <div class="kb-label">Vocali disponibili</div>
+        <div id="rf-vow-keys" class="kb-row"></div>
+      </div>
+    </div>
+
+    <!-- scoreboard -->
+    <div class="scoreboard">
+      <div class="sb-title">Punteggi totali</div>
+      <div id="rf-scoreboard"></div>
+    </div>
+  </div>
+
+  <!-- ROUND WIN -->
+  <div class="screen" id="rf-roundwin">
+    <div class="round-banner" id="rf-rw-banner"></div>
+    <div class="scoreboard">
+      <div class="sb-title">Punteggi dopo questo round</div>
+      <div id="rf-rw-scoreboard"></div>
+    </div>
+    <button class="btn-blue" id="rf-rw-next" onclick="RF.nextRound()">Prossima frase →</button>
+  </div>
+
+  <!-- FINALE -->
+  <div class="screen" id="rf-final">
+    <div class="hero-band" style="text-align:center;">
+      <h2 style="text-align:center;">Partita<br><span>finita! 🎉</span></h2>
+      <p style="text-align:center;">Ecco i risultati finali!</p>
+    </div>
+    <div id="rf-podium" style="margin-bottom:1.25rem;"></div>
+    <button class="btn-yellow" onclick="RF.restart()">🔄 Nuova partita</button>
   </div>
 
 
@@ -2917,6 +3183,567 @@ const MIL=(()=>{
 
   buildCats();
   return{start,pick,next,walk,use5050,usePubblico,useTelefono,restart};
+})();
+
+
+// ── RUOTA DELLA FORTUNA ──
+
+// ══ FRASI ══
+const FRASI = [
+  // FILM E SERIE
+  {cat:"Film e Serie TV", hint:"Film Disney", phrase:"IL RE LEONE"},
+  {cat:"Film e Serie TV", hint:"Film Disney", phrase:"LA BELLA E LA BESTIA"},
+  {cat:"Film e Serie TV", hint:"Film Pixar", phrase:"ALLA RICERCA DI NEMO"},
+  {cat:"Film e Serie TV", hint:"Saga cinematografica", phrase:"HARRY POTTER"},
+  {cat:"Film e Serie TV", hint:"Saga cinematografica", phrase:"IL SIGNORE DEGLI ANELLI"},
+  {cat:"Film e Serie TV", hint:"Serie Netflix", phrase:"STRANGER THINGS"},
+  {cat:"Film e Serie TV", hint:"Film d'animazione", phrase:"IL CASTELLO ERRANTE DI HOWL"},
+  {cat:"Film e Serie TV", hint:"Film Pixar", phrase:"INSIDE OUT"},
+  {cat:"Film e Serie TV", hint:"Film Disney", phrase:"FROZEN"},
+  {cat:"Film e Serie TV", hint:"Serie Netflix", phrase:"MERCOLEDI"},
+  {cat:"Film e Serie TV", hint:"Film Marvel", phrase:"SPIDER MAN"},
+  {cat:"Film e Serie TV", hint:"Film d'animazione giapponese", phrase:"IL MIO VICINO TOTORO"},
+  {cat:"Film e Serie TV", hint:"Saga fantascientifica", phrase:"STAR WARS"},
+  {cat:"Film e Serie TV", hint:"Film Disney", phrase:"MOANA"},
+  {cat:"Film e Serie TV", hint:"Film Pixar", phrase:"COCO"},
+  {cat:"Film e Serie TV", hint:"Serie anime", phrase:"DEMON SLAYER"},
+  {cat:"Film e Serie TV", hint:"Serie anime", phrase:"ATTACK ON TITAN"},
+  {cat:"Film e Serie TV", hint:"Film Disney", phrase:"ENCANTO"},
+  {cat:"Film e Serie TV", hint:"Serie Netflix", phrase:"LA CASA DI CARTA"},
+  {cat:"Film e Serie TV", hint:"Film d'animazione", phrase:"DRAGON BALL"},
+  // MUSICA
+  {cat:"Musica", hint:"Artista pop internazionale", phrase:"TAYLOR SWIFT"},
+  {cat:"Musica", hint:"Gruppo K-pop coreano", phrase:"BTS"},
+  {cat:"Musica", hint:"Artista pop", phrase:"BILLIE EILISH"},
+  {cat:"Musica", hint:"Canzone di Frozen", phrase:"LET IT GO"},
+  {cat:"Musica", hint:"Artista britannico", phrase:"ED SHEERAN"},
+  {cat:"Musica", hint:"Gruppo rock italiano vincitore Eurovision", phrase:"MANESKIN"},
+  {cat:"Musica", hint:"Artista pop americana", phrase:"ARIANA GRANDE"},
+  {cat:"Musica", hint:"Artista pop", phrase:"DOJA CAT"},
+  {cat:"Musica", hint:"Gruppo pop britannico anni 2010", phrase:"ONE DIRECTION"},
+  {cat:"Musica", hint:"Artista R&B", phrase:"BEYONCE"},
+  {cat:"Musica", hint:"Artista pop americana", phrase:"DEMI LOVATO"},
+  {cat:"Musica", hint:"Festival musicale italiano", phrase:"SANREMO"},
+  {cat:"Musica", hint:"Genere musicale coreano", phrase:"K POP"},
+  {cat:"Musica", hint:"Artista pop canadese", phrase:"JUSTIN BIEBER"},
+  {cat:"Musica", hint:"Artista pop australiana", phrase:"OLIVIA RODRIGO"},
+  // SPORT
+  {cat:"Sport", hint:"Giocatore di calcio argentino", phrase:"LIONEL MESSI"},
+  {cat:"Sport", hint:"Competizione sportiva mondiale", phrase:"CAMPIONATO DEL MONDO"},
+  {cat:"Sport", hint:"Evento sportivo internazionale", phrase:"GIOCHI OLIMPICI"},
+  {cat:"Sport", hint:"Sport di squadra", phrase:"PALLAVOLO"},
+  {cat:"Sport", hint:"Sport con racchetta e pallina", phrase:"TENNIS"},
+  {cat:"Sport", hint:"Sport acquatico", phrase:"NUOTO"},
+  {cat:"Sport", hint:"Competizione ciclistica", phrase:"TOUR DE FRANCE"},
+  {cat:"Sport", hint:"Sport di squadra americano", phrase:"BASKET"},
+  {cat:"Sport", hint:"Atleta giamaicano velocista", phrase:"USAIN BOLT"},
+  {cat:"Sport", hint:"Squadra di calcio italiana", phrase:"NAPOLI"},
+  {cat:"Sport", hint:"Sport su ghiaccio", phrase:"PATTINAGGIO ARTISTICO"},
+  {cat:"Sport", hint:"Competizione automobilistica", phrase:"FORMULA UNO"},
+  // PERSONAGGI FAMOSI
+  {cat:"Personaggio famoso", hint:"Scienziata fisica", phrase:"MARIE CURIE"},
+  {cat:"Personaggio famoso", hint:"Artista e scienziato del Rinascimento", phrase:"LEONARDO DA VINCI"},
+  {cat:"Personaggio famoso", hint:"Fisica teorica", phrase:"ALBERT EINSTEIN"},
+  {cat:"Personaggio famoso", hint:"Astronomo italiano", phrase:"GALILEO GALILEI"},
+  {cat:"Personaggio famoso", hint:"Poeta italiano", phrase:"DANTE ALIGHIERI"},
+  {cat:"Personaggio famoso", hint:"Conduttore televisivo italiano", phrase:"AMADEUS"},
+  {cat:"Personaggio famoso", hint:"Artista italiana", phrase:"FRIDA KAHLO"},
+  {cat:"Personaggio famoso", hint:"Attivista per i diritti", phrase:"NELSON MANDELA"},
+  {cat:"Personaggio famoso", hint:"Scultore e pittore italiano", phrase:"MICHELANGELO"},
+  {cat:"Personaggio famoso", hint:"Navigatore genovese", phrase:"CRISTOFORO COLOMBO"},
+  // LUOGHI
+  {cat:"Luogo famoso", hint:"Struttura italiana", phrase:"TORRE DI PISA"},
+  {cat:"Luogo famoso", hint:"Monumento romano", phrase:"IL COLOSSEO"},
+  {cat:"Luogo famoso", hint:"Monumento parigino", phrase:"TORRE EIFFEL"},
+  {cat:"Luogo famoso", hint:"Struttura egizia", phrase:"LE PIRAMIDI"},
+  {cat:"Luogo famoso", hint:"Città italiana", phrase:"VENEZIA"},
+  {cat:"Luogo famoso", hint:"Parco a tema americano", phrase:"DISNEYLAND"},
+  {cat:"Luogo famoso", hint:"Città italiana", phrase:"NAPOLI"},
+  {cat:"Luogo famoso", hint:"Capitale europea", phrase:"PARIGI"},
+  {cat:"Luogo famoso", hint:"Montagna più alta del mondo", phrase:"MONTE EVEREST"},
+  {cat:"Luogo famoso", hint:"Oceano", phrase:"OCEANO PACIFICO"},
+  // ANIMALI
+  {cat:"Animale", hint:"Mammifero marino", phrase:"BALENA BLU"},
+  {cat:"Animale", hint:"Felino africano velocissimo", phrase:"GHEPARDO"},
+  {cat:"Animale", hint:"Rettile preistorico", phrase:"TIRANNOSAURO REX"},
+  {cat:"Animale", hint:"Animale con collo lungo", phrase:"GIRAFFA"},
+  {cat:"Animale", hint:"Mammifero con proboscide", phrase:"ELEFANTE AFRICANO"},
+  {cat:"Animale", hint:"Uccello che non vola", phrase:"PINGUINO"},
+  {cat:"Animale", hint:"Animale a strisce", phrase:"ZEBRA"},
+  {cat:"Animale", hint:"Rettile cambia colore", phrase:"CAMALEONTE"},
+  {cat:"Animale", hint:"Insetto che produce miele", phrase:"APE"},
+  {cat:"Animale", hint:"Animale simbolo dell'Australia", phrase:"CANGURO"},
+  // CULTURA E SCIENZA
+  {cat:"Cultura e Scienza", hint:"Pianeta del sistema solare", phrase:"GIOVE"},
+  {cat:"Cultura e Scienza", hint:"Fenomeno atmosferico colorato", phrase:"ARCOBALENO"},
+  {cat:"Cultura e Scienza", hint:"Formula chimica", phrase:"ACQUA"},
+  {cat:"Cultura e Scienza", hint:"Fenomeno astronomico", phrase:"ECLISSI SOLARE"},
+  {cat:"Cultura e Scienza", hint:"Teoria scientifica", phrase:"EVOLUZIONE"},
+  {cat:"Cultura e Scienza", hint:"Strumento musicale", phrase:"PIANOFORTE"},
+  {cat:"Cultura e Scienza", hint:"Opera letteraria italiana", phrase:"LA DIVINA COMMEDIA"},
+  {cat:"Cultura e Scienza", hint:"Invenzione tecnologica", phrase:"INTELLIGENZA ARTIFICIALE"},
+  {cat:"Cultura e Scienza", hint:"Elemento chimico prezioso", phrase:"ORO"},
+  {cat:"Cultura e Scienza", hint:"Fenomeno naturale", phrase:"VULCANO"},
+];
+
+// ══ RUOTA ══
+const WHEEL_SEGMENTS = [
+  {label:"300",  pts:300,  type:"pts",      color:"#1A4F8A"},
+  {label:"500",  pts:500,  type:"pts",      color:"#F5C400"},
+  {label:"200",  pts:200,  type:"pts",      color:"#0F6E56"},
+  {label:"PERDE",pts:0,   type:"lose",     color:"#C0392B"},
+  {label:"700",  pts:700,  type:"pts",      color:"#534AB7"},
+  {label:"400",  pts:400,  type:"pts",      color:"#2563A8"},
+  {label:"JOLLY",pts:0,   type:"jolly",    color:"#1A8A4F"},
+  {label:"600",  pts:600,  type:"pts",      color:"#E67E22"},
+  {label:"BANCO",pts:0,   type:"bankrupt", color:"#0F2A50"},
+  {label:"800",  pts:800,  type:"pts",      color:"#8B5CF6"},
+  {label:"250",  pts:250,  type:"pts",      color:"#C89C00"},
+  {label:"1000", pts:1000, type:"pts",      color:"#D85A30"},
+];
+
+const RF_PC = [
+  {bg:"#1A4F8A",fg:"#FFFFFF"},{bg:"#F5C400",fg:"#0F2A50"},
+  {bg:"#2563A8",fg:"#FFFFFF"},{bg:"#0F3362",fg:"#FFFFFF"},
+  {bg:"#D6E6F7",fg:"#0F3362"},{bg:"#FEF3C7",fg:"#7A5800"},
+  {bg:"#1A8A4F",fg:"#FFFFFF"},{bg:"#C0392B",fg:"#FFFFFF"},
+];
+
+const VOWELS = ['A','E','I','O','U'];
+const CONSONANTS = ['B','C','D','F','G','H','L','M','N','P','Q','R','S','T','V','Z'];
+
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+
+// ══ DISEGNA RUOTA ══
+function drawWheel(rotation){
+  const canvas = document.getElementById('wheel-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const size = canvas.width;
+  const cx = size/2, cy = size/2, r = size/2 - 4;
+  const n = WHEEL_SEGMENTS.length;
+  const arc = (2 * Math.PI) / n;
+  ctx.clearRect(0,0,size,size);
+
+  WHEEL_SEGMENTS.forEach((seg,i)=>{
+    const start = rotation + i * arc - Math.PI/2;
+    const end = start + arc;
+    ctx.beginPath();
+    ctx.moveTo(cx,cy);
+    ctx.arc(cx,cy,r,start,end);
+    ctx.closePath();
+    ctx.fillStyle = seg.color;
+    ctx.fill();
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // testo
+    ctx.save();
+    ctx.translate(cx,cy);
+    ctx.rotate(start + arc/2);
+    ctx.textAlign = 'right';
+    ctx.fillStyle = '#fff';
+    ctx.font = `bold ${seg.label.length > 4 ? 9 : 11}px Montserrat, sans-serif`;
+    ctx.fillText(seg.label, r - 8, 4);
+    ctx.restore();
+  });
+
+  // cerchio centrale
+  ctx.beginPath();
+  ctx.arc(cx,cy,Math.round(size*0.08),0,2*Math.PI);
+  ctx.fillStyle = '#fff';
+  ctx.fill();
+  ctx.strokeStyle = '#D6E6F7';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+  ctx.fillStyle = '#1A4F8A';
+  ctx.font = 'bold 10px Montserrat, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.font = `bold ${Math.round(size*0.036)}px Montserrat, sans-serif`;
+  ctx.fillText('GIRA', cx, cy);
+}
+
+// ══ STATO GLOBALE ══
+const RF = (()=>{
+  let G = {
+    players:[], scores:{}, roundScores:{},
+    totalRounds:5, currentRound:0,
+    phrase:'', category:'', hint:'',
+    revealed:new Set(), usedLetters:new Set(),
+    currentPlayer:0, roundPts:0,
+    spinning:false, spinValue:null, jollyActive:false,
+    phraseDeck:[],
+  };
+
+  function showRFS(id){
+    document.querySelectorAll('#view-ruota .screen').forEach(s=>s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  // ── SETUP ──
+  let selectedRounds = 5;
+  function setRounds(n){
+    selectedRounds = n;
+    document.querySelectorAll('[data-n]').forEach(b=>{
+      b.style.background = parseInt(b.dataset.n)===n ? 'var(--blue)' : '#fff';
+      b.style.color = parseInt(b.dataset.n)===n ? '#fff' : 'var(--blue)';
+    });
+    document.getElementById('rf-rounds-preview').textContent = `Selezionato: ${n} frasi`;
+  }
+  setRounds(5);
+
+  function buildNames(){
+    const n = parseInt(document.getElementById('rf-np').value)||3;
+    const c = document.getElementById('rf-pnames');
+    const ex = [];
+    for(let i=0;i<20;i++){const el=document.getElementById(`rfpn${i}`);if(el)ex[i]=el.value;else break;}
+    c.innerHTML='';
+    for(let i=0;i<n;i++){
+      const p=RF_PC[i%RF_PC.length];
+      const r=document.createElement('div');r.className='pni';
+      r.innerHTML=`<div class="pni-dot" style="background:${p.bg};color:${p.fg};">${i+1}</div><input type="text" placeholder="Giocatore ${i+1}" id="rfpn${i}"/>`;
+      c.appendChild(r);
+      if(ex[i])setTimeout(()=>{const el=document.getElementById(`rfpn${i}`);if(el)el.value=ex[i];},0);
+    }
+  }
+  buildNames();
+  document.getElementById('rf-np').addEventListener('input', buildNames);
+
+  function start(){
+    const n = parseInt(document.getElementById('rf-np').value)||3;
+    G.players=[];
+    for(let i=0;i<n;i++){
+      const v=document.getElementById(`rfpn${i}`)?.value.trim();
+      G.players.push(v||`Giocatore ${i+1}`);
+    }
+    G.scores={};G.players.forEach(p=>G.scores[p]=0);
+    G.totalRounds = selectedRounds;
+    G.currentRound = 0;
+    G.currentPlayer = 0;
+    G.phraseDeck = shuffle([...FRASI]);
+    drawWheel(0);
+    loadRound();
+  }
+
+  // ── ROUND ──
+  function loadRound(){
+    if(G.currentRound >= G.totalRounds){ showFinal(); return; }
+    const f = G.phraseDeck[G.currentRound % G.phraseDeck.length];
+    G.phrase = f.phrase.toUpperCase().replace(/[ÀÁÂÃÄÅ]/g,'A').replace(/[ÈÉÊË]/g,'E').replace(/[ÌÍÎÏ]/g,'I').replace(/[ÒÓÔÕÖ]/g,'O').replace(/[ÙÚÛÜ]/g,'U');
+    G.category = f.cat;
+    G.hint = f.hint;
+    G.revealed = new Set();
+    G.usedLetters = new Set();
+    G.roundScores = {};
+    G.players.forEach(p=>G.roundScores[p]=0);
+    G.spinValue = null;
+    G.jollyActive = false;
+    renderPhrase();
+    renderScoreboard();
+    updateTurnBar();
+    hideAll();
+    showRFS('rf-game');
+  }
+
+  function hideAll(){
+    ['rf-spin-result','rf-banner','rf-actions','rf-kb-consonants','rf-kb-vowels'].forEach(id=>{
+      document.getElementById(id).style.display='none';
+    });
+    document.getElementById('rf-wheel-section').style.display='flex';
+    document.getElementById('rf-spin-btn').disabled=false;
+  }
+
+  // ── RENDERING FRASE ──
+  function renderPhrase(){
+    const slots = document.getElementById('rf-slots');
+    document.getElementById('rf-cat').textContent = G.category;
+    document.getElementById('rf-hint').textContent = `💡 ${G.hint}`;
+    slots.innerHTML = G.phrase.split('').map((ch,i)=>{
+      if(ch===' ') return `<span class="slot space"> </span>`;
+      if(!/[A-Z]/.test(ch)) return `<span class="slot special">${ch}</span>`;
+      if(G.revealed.has(ch)) return `<span class="slot revealed">${ch}</span>`;
+      return `<span class="slot"> </span>`;
+    }).join('');
+  }
+
+  function isPhraseSolved(){
+    return G.phrase.split('').every(ch=> ch===' ' || !/[A-Z]/.test(ch) || G.revealed.has(ch));
+  }
+
+  // ── TURNO BAR ──
+  function updateTurnBar(){
+    const p = G.players[G.currentPlayer];
+    const pc = RF_PC[G.currentPlayer % RF_PC.length];
+    const dot = document.getElementById('rf-turn-dot');
+    dot.style.background=pc.bg; dot.style.color=pc.fg;
+    dot.textContent = G.currentPlayer+1;
+    document.getElementById('rf-turn-name').textContent = p;
+    document.getElementById('rf-turn-pts').textContent = (G.roundScores[p]||0).toLocaleString();
+  }
+
+  // ── SCOREBOARD ──
+  function renderScoreboard(elId='rf-scoreboard'){
+    const el = document.getElementById(elId); if(!el) return;
+    const sorted = [...G.players].sort((a,b)=>(G.scores[b]||0)-(G.scores[a]||0));
+    const max = Math.max(...sorted.map(p=>G.scores[p]||0), 1);
+    el.innerHTML = sorted.map((p,i)=>{
+      const pi = G.players.indexOf(p);
+      const pc = RF_PC[pi % RF_PC.length];
+      const isL = (G.scores[p]||0)===max && (G.scores[p]||0)>0;
+      return `<div class="sb-row">
+        <div class="sb-left">
+          <div class="sb-dot" style="background:${pc.bg};color:${pc.fg};">${i+1}</div>
+          <span class="sb-name">${p}${isL?' 👑':''}</span>
+        </div>
+        <div class="sb-val${isL?' leader':''}">${(G.scores[p]||0).toLocaleString()}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // ── GIRA LA RUOTA ──
+  let wheelAngle = 0;
+  function spin(){
+    if(G.spinning) return;
+    G.spinning = true;
+    document.getElementById('rf-spin-btn').disabled = true;
+    document.getElementById('rf-wheel-section').style.display='flex';
+    document.getElementById('rf-spin-result').style.display='none';
+    document.getElementById('rf-banner').style.display='none';
+    document.getElementById('rf-actions').style.display='none';
+
+    const n = WHEEL_SEGMENTS.length;
+    const arc = 360 / n;
+    const extra = Math.floor(Math.random()*n);
+    const totalSpin = 1440 + 720*Math.random() + extra*arc;
+    const duration = 3000 + Math.random()*1000;
+    const start = performance.now();
+    const startAngle = wheelAngle;
+
+    function animate(now){
+      const elapsed = now - start;
+      const progress = Math.min(elapsed/duration, 1);
+      const ease = 1 - Math.pow(1-progress, 3);
+      wheelAngle = startAngle + totalSpin * ease;
+      drawWheel((wheelAngle * Math.PI)/180);
+      if(progress < 1){ requestAnimationFrame(animate); }
+      else {
+        G.spinning = false;
+        // calcola segmento vincente
+        const normalizedAngle = ((wheelAngle % 360) + 360) % 360;
+        const segIdx = Math.floor(((360 - normalizedAngle) % 360) / arc) % n;
+        const seg = WHEEL_SEGMENTS[segIdx];
+        G.spinValue = seg;
+        G.jollyActive = seg.type === 'jolly';
+        showSpinResult(seg);
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+
+  function showSpinResult(seg){
+    const el = document.getElementById('rf-spin-result');
+    el.style.display='block';
+    const player = G.players[G.currentPlayer];
+
+    if(seg.type==='lose'){
+      el.className='spin-result lose';
+      el.textContent='😔 Perde il turno!';
+      showBanner('ko',`${player} perde il turno. Passa al prossimo giocatore.`);
+      setTimeout(()=>{nextPlayer(); hideAll();}, 2000);
+    } else if(seg.type==='bankrupt'){
+      el.className='spin-result bankrupt';
+      el.textContent='💥 BANCO! Perdi i punti del round!';
+      G.roundScores[player] = 0;
+      updateTurnBar();
+      showBanner('ko',`${player} va in bancarotta! Perdi tutti i punti di questo round.`);
+      setTimeout(()=>{nextPlayer(); hideAll();}, 2500);
+    } else if(seg.type==='jolly'){
+      el.className='spin-result jolly';
+      el.textContent='⭐ JOLLY! La prossima lettera vale doppio!';
+      showActions();
+    } else {
+      el.className='spin-result pts';
+      el.textContent=`🎯 ${seg.pts} punti per ogni lettera!`;
+      showActions();
+    }
+  }
+
+  function showActions(){
+    const el = document.getElementById('rf-actions');
+    el.style.display='block';
+    document.getElementById('rf-wheel-section').style.display='none';
+    const player = G.players[G.currentPlayer];
+    const pts = G.roundScores[player]||0;
+    document.getElementById('rf-btn-vowel').disabled = pts < 250;
+    document.getElementById('rf-btn-vowel').textContent = `💰 Compra una vocale (${pts<250?'servono 250 pt':'250 pt'})`;
+  }
+
+  // ── CONSONANTE ──
+  function chooseConsonant(){
+    document.getElementById('rf-actions').style.display='none';
+    document.getElementById('rf-kb-consonants').style.display='block';
+    const row = document.getElementById('rf-cons-keys');
+    row.innerHTML = CONSONANTS.map(ch=>{
+      const used = G.usedLetters.has(ch);
+      return `<button class="kb-btn ${used?'miss':''}" ${used?'disabled':''} onclick="RF.pickLetter('${ch}','consonant')">${ch}</button>`;
+    }).join('');
+  }
+
+  // ── VOCALE ──
+  function chooseVowel(){
+    const player = G.players[G.currentPlayer];
+    if((G.roundScores[player]||0)<250){ return; }
+    G.roundScores[player] -= 250;
+    updateTurnBar();
+    document.getElementById('rf-actions').style.display='none';
+    document.getElementById('rf-kb-vowels').style.display='block';
+    const row = document.getElementById('rf-vow-keys');
+    row.innerHTML = VOWELS.map(ch=>{
+      const used = G.usedLetters.has(ch);
+      return `<button class="kb-btn vowel ${used?'miss':''}" ${used?'disabled':''} onclick="RF.pickLetter('${ch}','vowel')">${ch}</button>`;
+    }).join('');
+  }
+
+  // ── LETTERA SCELTA ──
+  function pickLetter(ch, type){
+    document.getElementById('rf-kb-consonants').style.display='none';
+    document.getElementById('rf-kb-vowels').style.display='none';
+    G.usedLetters.add(ch);
+    const player = G.players[G.currentPlayer];
+    const count = G.phrase.split('').filter(c=>c===ch).length;
+
+    if(count > 0){
+      G.revealed.add(ch);
+      renderPhrase();
+      let ptsEarned = 0;
+      if(type==='consonant'){
+        const val = G.spinValue?.pts || 0;
+        ptsEarned = val * count * (G.jollyActive ? 2 : 1);
+        G.roundScores[player] = (G.roundScores[player]||0) + ptsEarned;
+        G.jollyActive = false;
+        updateTurnBar();
+      }
+      const jollyTxt = G.jollyActive ? ' (Jolly x2!)' : '';
+      showBanner('ok', type==='vowel'
+        ? `✓ La lettera ${ch} è presente ${count} volta/e!`
+        : `✓ ${ch} presente ${count} volta/e! +${ptsEarned.toLocaleString()} punti${jollyTxt}`
+      );
+
+      if(isPhraseSolved()){
+        G.scores[player] = (G.scores[player]||0) + (G.roundScores[player]||0);
+        setTimeout(()=>showRoundWin(player), 1000);
+        return;
+      }
+      // può continuare il turno — mostra opzioni
+      setTimeout(()=>{
+        document.getElementById('rf-banner').style.display='none';
+        document.getElementById('rf-wheel-section').style.display='flex';
+        document.getElementById('rf-spin-btn').disabled=false;
+        document.getElementById('rf-spin-result').style.display='none';
+      },1500);
+    } else {
+      showBanner('ko',`✗ La lettera ${ch} non è presente. Passa al prossimo giocatore.`);
+      G.jollyActive = false;
+      setTimeout(()=>{nextPlayer(); hideAll();}, 2000);
+    }
+  }
+
+  // ── RISOLVI ──
+  function openSolve(){
+    const overlay = document.createElement('div');
+    overlay.className='solve-overlay';
+    overlay.innerHTML=`<div class="solve-box">
+      <div class="solve-title">💡 Risolvi la frase</div>
+      <div style="font-size:12px;color:var(--text-mid);font-weight:600;margin-bottom:10px;">Scrivi la frase completa:</div>
+      <input type="text" class="solve-input" id="solve-inp" placeholder="LA TUA RISPOSTA…" autocomplete="off"/>
+      <button class="btn-blue" style="margin-top:0;" onclick="RF.checkSolve()">Conferma →</button>
+      <button class="btn-secondary" onclick="document.body.removeChild(document.querySelector('.solve-overlay'))">Annulla</button>
+    </div>`;
+    document.body.appendChild(overlay);
+    setTimeout(()=>document.getElementById('solve-inp')?.focus(),100);
+  }
+
+  function checkSolve(){
+    const inp = document.getElementById('solve-inp');
+    if(!inp) return;
+    const attempt = inp.value.trim().toUpperCase()
+      .replace(/[ÀÁÂÃÄÅ]/g,'A').replace(/[ÈÉÊË]/g,'E')
+      .replace(/[ÌÍÎÏ]/g,'I').replace(/[ÒÓÔÕÖ]/g,'O').replace(/[ÙÚÛÜ]/g,'U');
+    document.body.removeChild(document.querySelector('.solve-overlay'));
+    const player = G.players[G.currentPlayer];
+    if(attempt === G.phrase){
+      // rivela tutto
+      G.phrase.split('').forEach(ch=>{ if(/[A-Z]/.test(ch)) G.revealed.add(ch); });
+      renderPhrase();
+      G.scores[player] = (G.scores[player]||0) + (G.roundScores[player]||0) + 500;
+      setTimeout(()=>showRoundWin(player, true), 800);
+    } else {
+      showBanner('ko',`✗ Risposta sbagliata! Passa al prossimo giocatore.`);
+      G.jollyActive = false;
+      setTimeout(()=>{nextPlayer(); hideAll();}, 2000);
+    }
+  }
+
+  function showRoundWin(player, bonus=false){
+    const earned = G.roundScores[player]||0;
+    const el = document.getElementById('rf-rw-banner');
+    el.innerHTML=`<div class="rb-round">Round ${G.currentRound+1} di ${G.totalRounds}</div>
+      <div class="rb-phrase">${G.phrase}</div>
+      <div class="rb-pts">🏆 ${player} ha risolto la frase! +${(earned+(bonus?500:0)).toLocaleString()} punti${bonus?' (bonus +500 per soluzione diretta)':''}</div>`;
+    renderScoreboard('rf-rw-scoreboard');
+    const nextBtn = document.getElementById('rf-rw-next');
+    nextBtn.textContent = G.currentRound+1 >= G.totalRounds ? 'Vedi classifica finale 🏆' : 'Prossima frase →';
+    showRFS('rf-roundwin');
+  }
+
+  function nextRound(){
+    G.currentRound++;
+    if(G.currentRound >= G.totalRounds){ showFinal(); return; }
+    loadRound();
+  }
+
+  // ── GESTIONE TURNI ──
+  function nextPlayer(){
+    G.currentPlayer = (G.currentPlayer + 1) % G.players.length;
+    updateTurnBar();
+    renderScoreboard();
+  }
+
+  function showBanner(type, txt){
+    const el = document.getElementById('rf-banner');
+    el.style.display='flex';
+    el.className=`banner ${type}`;
+    el.innerHTML=`<span class="banner-icon">${type==='ok'?'✅':'❌'}</span><div class="banner-txt">${txt}</div>`;
+  }
+
+  // ── FINALE ──
+  function showFinal(){
+    const sorted = [...G.players].sort((a,b)=>(G.scores[b]||0)-(G.scores[a]||0));
+    const medals=['🥇','🥈','🥉'];
+    document.getElementById('rf-podium').innerHTML=sorted.map((p,i)=>{
+      const cls=i===0?'p1':i===1?'p2':'pn';
+      return`<div class="podium-item ${cls}">
+        <div class="podium-rank">${medals[i]||i+1}</div>
+        <div class="podium-name">${p}</div>
+        <div class="podium-score">${(G.scores[p]||0).toLocaleString()}</div>
+      </div>`;
+    }).join('');
+    showRFS('rf-final');
+  }
+
+  function restart(){
+    G={players:[],scores:{},roundScores:{},totalRounds:5,currentRound:0,phrase:'',category:'',hint:'',revealed:new Set(),usedLetters:new Set(),currentPlayer:0,roundPts:0,spinning:false,spinValue:null,jollyActive:false,phraseDeck:[]};
+    buildNames();
+    showRFS('rf-setup');
+  }
+
+  // init ruota
+  setTimeout(()=>{ const c=document.getElementById('wheel-canvas'); if(c){drawWheel(0);} }, 200);
+
+  return{start,spin,pickLetter,chooseConsonant,chooseVowel,openSolve,checkSolve,nextRound,restart,setRounds};
 })();
 
 </script>
