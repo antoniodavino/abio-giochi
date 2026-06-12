@@ -1099,6 +1099,27 @@ to{opacity:1;transform:translateY(0);}}
       <input type="text" id="m-name" placeholder="es. Giulia…" maxlength="20"/>
     </div>
     <div class="card">
+      <label>Livello di difficoltà</label>
+      <div class="mode-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="mode-card sel" id="diff-easy" onclick="MIL.setDiff('easy')">
+          <div class="mode-icon">🌱</div>
+          <div class="mode-name">Facile</div>
+          <div class="mode-desc">Domande semplici</div>
+        </div>
+        <div class="mode-card" id="diff-med" onclick="MIL.setDiff('med')">
+          <div class="mode-icon">⚡</div>
+          <div class="mode-name">Medio</div>
+          <div class="mode-desc">Mix equilibrato</div>
+        </div>
+        <div class="mode-card" id="diff-hard" onclick="MIL.setDiff('hard')">
+          <div class="mode-icon">🔥</div>
+          <div class="mode-name">Difficile</div>
+          <div class="mode-desc">Domande impegnative</div>
+        </div>
+      </div>
+      <div id="m-diff-desc" style="font-size:12px;color:var(--text-mid);font-weight:600;margin-top:6px;">🌱 Facile — domande di primo livello su categorie pop</div>
+    </div>
+    <div class="card">
       <label>Categorie — seleziona almeno 3</label>
       <div class="cat-grid" id="m-cats"></div>
       <div id="m-cat-info"></div>
@@ -2935,13 +2956,30 @@ const LABELS_MIL=['A','B','C','D'];
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
 
 const MIL=(()=>{
-  let G={name:'',cats:[],deck:[],idx:0,q:null,ll:{a:true,b:true,c:true},safePoints:0,prizes:[],answered:false};
+  let G={name:'',cats:[],deck:[],idx:0,q:null,ll:{a:true,b:true,c:true},safePoints:0,prizes:[],answered:false,diff:'easy'};
 
   function showMILS(id){document.querySelectorAll('#view-mil .screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
 
+  const DIFF_CATS={
+    easy:["Musica","Serie TV e Film","Sport","Animali","Cultura generale"],
+    med:null,hard:null
+  };
+  const DIFF_DESC={
+    easy:"🌱 Facile — domande di primo livello su categorie pop",
+    med:"⚡ Medio — mix equilibrato, tutte le categorie",
+    hard:"🔥 Difficile — domande impegnative, tutte le categorie"
+  };
+  function setDiff(d){
+    G.diff=d;G.cats=[];
+    ['easy','med','hard'].forEach(x=>document.getElementById('diff-'+x)?.classList.toggle('sel',x===d));
+    const el=document.getElementById('m-diff-desc');if(el)el.textContent=DIFF_DESC[d];
+    buildCats();
+  }
   function buildCats(){
     const grid=document.getElementById('m-cats');grid.innerHTML='';
-    CATS_MIL.forEach(c=>{
+    const allowed=DIFF_CATS[G.diff];
+    const visCats=allowed?CATS_MIL.filter(x=>allowed.includes(x.cat)):CATS_MIL;
+    visCats.forEach(c=>{
       const d=document.createElement('div');d.className='cat-card'+(G.cats.includes(c.cat)?' sel':'');
       d.innerHTML=`<div class="ce">${c.e}</div><div class="cn">${c.cat}</div>`;
       d.onclick=()=>{
@@ -2968,11 +3006,22 @@ const MIL=(()=>{
     if(!name){alert('Inserisci il nome del concorrente!');return;}
     if(G.cats.length<3){alert('Seleziona almeno 3 categorie!');return;}
     const pool=QQM.filter(q=>G.cats.includes(q.cat));
-    const easy=shuffle(pool.filter(q=>q.d===1));
-    const med=shuffle(pool.filter(q=>q.d===2));
-    const hard=shuffle(pool.filter(q=>q.d===3));
-    if(easy.length<3||med.length<4||hard.length<3){alert('Seleziona più categorie!');return;}
-    G.name=name;G.deck=[...easy.slice(0,3),...med.slice(0,4),...hard.slice(0,3)];
+    const pe=shuffle(pool.filter(q=>q.d===1));
+    const pm=shuffle(pool.filter(q=>q.d===2));
+    const ph=shuffle(pool.filter(q=>q.d===3));
+    let milDeck;
+    if(G.diff==='easy'){
+      if(pe.length<5||pm.length<5){alert('Aggiungi almeno una categoria!');return;}
+      milDeck=[...pe.slice(0,5),...pm.slice(0,5)];
+    } else if(G.diff==='hard'){
+      if(pe.length<2||pm.length<3||ph.length<5){alert('Aggiungi almeno una categoria!');return;}
+      milDeck=[...pe.slice(0,2),...pm.slice(0,3),...ph.slice(0,5)];
+    } else {
+      if(pe.length<3||pm.length<4||ph.length<3){alert('Aggiungi almeno una categoria!');return;}
+      milDeck=[...pe.slice(0,3),...pm.slice(0,4),...ph.slice(0,3)];
+    }
+    G.deck=milDeck;
+    G.name=name;
     G.idx=0;G.safePoints=0;G.prizes=[];G.answered=false;
     G.ll={a:true,b:true,c:true};
     loadQ();
@@ -2996,7 +3045,7 @@ const MIL=(()=>{
     document.getElementById('m-banner').style.display='none';
     document.getElementById('m-actions').style.display='none';
     document.getElementById('m-opts').innerHTML=G.q.o.map((o,i)=>`
-      <button class="opt" id="opt${i}" onclick="M.pick(${i})">
+      <button class="opt" id="opt${i}" onclick="MIL.pick(${i})">
         <span class="opt-lbl">${LABELS_MIL[i]}</span><span>${o}</span>
       </button>`).join('');
     showMILS('m-game');
@@ -3176,13 +3225,13 @@ const MIL=(()=>{
   }
 
   function restart(){
-    G={name:'',cats:[],deck:[],idx:0,q:null,ll:{a:true,b:true,c:true},safePoints:0,prizes:[],answered:false};
+    G={name:'',cats:[],deck:[],idx:0,q:null,ll:{a:true,b:true,c:true},safePoints:0,prizes:[],answered:false,diff:'easy'};
     document.getElementById('m-name').value='';
     buildCats();showMILS('m-setup');
   }
 
   buildCats();
-  return{start,pick,next,walk,use5050,usePubblico,useTelefono,restart};
+  return{start,pick,next,walk,use5050,usePubblico,useTelefono,restart,setDiff};
 })();
 
 
